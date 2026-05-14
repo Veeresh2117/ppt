@@ -1,0 +1,98 @@
+### PROMPT FOR CLAUDE TO RECREATE QLIK CLOUD DASHBOARD SHEET
+
+**Role:** You are an expert Qlik Sense Developer and UI/UX Designer specializing in high-end executive dashboards.
+
+**Target Qlik App:** [INSERT APP NAME OR ID HERE]
+
+**Objective:** Recreate the "CFO Cockpit" dashboard sheet in the specified Qlik Cloud app based on a provided design. The goal is to achieve 100% visual fidelity in terms of layout, coloring, spacing, and styling. This is a UI-only build; use dummy labels/placeholders for measures (e.g., `'0.00'`) as no live data model is required at this stage.
+
+---
+
+### **1. MANDATORY DESIGN CONSTRAINT: NO KPI OBJECTS**
+**IMPORTANT:** Do NOT use the standard Qlik "KPI" object. To achieve the exact layout and styling from the design, you must construct each card using a combination of **"Container"** and **"Text"** objects.
+- Use **Containers** to group the elements of each card.
+- Use **Text Objects** for titles, subtitles, metric lists, and the footer KPI count to allow for precise control over fonts, colors, and positioning.
+
+---
+
+### **2. SHEET GLOBAL SETTINGS**
+- **Theme:** Use a custom dark theme or "Qlik Sense Dark".
+- **Background Color:** `#101726` (Deep Dark Blue/Navy).
+- **Grid Size:** Medium (standard 12x24 grid).
+- **Title:** Hide the standard Qlik sheet title. We will use a custom text object.
+
+### **3. TOP FILTER BAR**
+- **Structure:** Create a horizontal row at the very top.
+- **Fields:** `Year`, `Quarter`, `Month`, `DeliveryUnit`, `BusinessUnit`, `Status`.
+- **Styling:** Use a Filter Pane for each or a single Filter Pane with these 6 fields.
+- **Appearance:** Disable "Show Title" for the Filter Pane. Background should be semi-transparent dark blue `#1b263b`. White text for labels.
+
+### **4. HEADER SECTION**
+- **Main Title:** Text Object on the top left. Text: "CFO Cockpit". Font: Bold, White, Size: ~24pt.
+- **Subtitle:** Text Object below Title. Text: "Select a category to navigate to the detailed dashboard". Color: `#94a3b8` (Light Grey).
+- **Date Indicator:** Text Object on the top right. Text: "FY 2026 - May YTD". Styling: Bordered box, grey text, center-aligned.
+
+### **5. KPI CARD GRID (2x3 Layout)**
+Replicate 6 specific cards. Each card must be a **Container** holding multiple **Text Objects** with specific styling:
+- **Card Background:** `#1e293b` (slightly lighter than sheet background).
+- **Card Borders:** Each card has a thick top and left border of a specific color.
+- **Internal Elements (All Text Objects within the Container):**
+    - **Icon:** Arrow-up-right icon in a circle on the top left of the card.
+    - **Title:** Large bold text.
+    - **Subtitle:** Smaller grey text below title.
+    - **Separator:** Dotted horizontal line.
+    - **KPI List:** Bulleted list of metrics using colored circles (matching the border color).
+    - **KPI Count (Footer):** A small box in the bottom-right corner showing "X KPIs".
+
+#### **Card 1: Growth & Revenue Health**
+- **Accent Color:** `#f59e0b` (Amber/Orange).
+- **Title:** Growth & Revenue Health
+- **Subtitle:** Revenue · Pipeline · NO-PO · Risk
+- **KPIs:** Revenue (Actual / Budget / Forecast), Revenue Growth %, Pipeline Coverage Ratio, Revenue at Risk, NO-PO Revenue %
+- **Footer:** 5 KPIs
+
+#### **Card 2: Profitability & Margin Control**
+- **Accent Color:** `#3b82f6` (Bright Blue).
+- **Title:** Profitability & Margin Control
+- **Subtitle:** CM · SG&A · EBITDA · PAT
+- **KPIs:** Contribution Margin %, CM vs Budget Delta, SG&A % of Revenue, EBITDA, PAT
+- **Footer:** 5 KPIs
+
+#### **Card 3: Cash & Working Capital**
+- **Accent Color:** `#10b981` (Emerald Green).
+- **Title:** Cash & Working Capital
+- **Subtitle:** Cash · DSO · Collections · CCC
+- **KPIs:** Cash Position, Collections, DSO, Unbilled Revenue Aging, Cash Conversion Cycle
+- **Footer:** 5 KPIs
+
+#### **Card 4: Capital & Treasury View**
+- **Accent Color:** `#0ea5e9` (Sky Blue).
+- **Title:** Capital & Treasury View
+- **Subtitle:** Investments · Yield · FX Exposure
+- **KPIs:** Investments (MF, Bonds), Investment Yield %, FX Exposure (Net USD)
+- **Footer:** 3 KPIs
+
+#### **Card 5: Enterprise Risk & Control**
+- **Accent Color:** `#f43f5e` (Rose/Red).
+- **Title:** Enterprise Risk & Control
+- **Subtitle:** Risk Index · NO-PO Trend · Red flags
+- **KPIs:** Enterprise Risk Index, NO-PO Revenue Trend, High-Risk Customers / Contracts
+- **Footer:** 3 KPIs
+
+#### **Card 6: Operational Levers**
+- **Accent Color:** `#84cc16` (Lime Green).
+- **Title:** Operational Levers
+- **Subtitle:** Utilisation · Revenue/FTE · Cost/FTE
+- **KPIs:** Resource Utilisation %, Revenue per FTE, Cost per FTE
+- **Footer:** 3 KPIs
+
+---
+
+### **6. TECHNICAL INSTRUCTIONS FOR IMPLEMENTATION**
+- **Spacing:** Ensure equal gutters (spacing) between all cards.
+- **Alignment:** All card titles and KPI lists must be perfectly left-aligned.
+- **Responsiveness:** Ensure objects are anchored correctly so they maintain their 2x3 proportions on different screen sizes.
+- **Custom CSS (if applicable via Theme):** Target `.qv-object` to remove default borders and apply the custom card styles.
+- **Naming:** Use professional business naming for all objects in the App Overview.
+
+**Please provide the JSON structure or the step-by-step Qlik Cloud UI instructions to build this exactly.**
