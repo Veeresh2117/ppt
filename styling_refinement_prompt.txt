@@ -1,0 +1,50 @@
+### PHASE 2: STYLING & COLORING REFINEMENT PROMPT (QLIK CLOUD)
+
+**Context:** The previous layout was created, but the theme and colors are stuck on default light mode. We need to force a "Dark Executive UI" look by overriding object-level styling.
+
+**Objective:** Transform the current sheet into the "Dark CFO Cockpit" by applying specific background colors, borders, and text styling to every object.
+
+---
+
+### **1. GLOBAL SHEET STYLING (FORCE DARK MODE)**
+1. Go to **Sheet Properties** > **Appearance** > **Styling**.
+2. **Sheet Background:** Set to **Solid Color** > `#101726` (Midnight Navy).
+3. **Title:** Disable "Show Title".
+
+### **2. TOP FILTER BAR REFINEMENT**
+1. Convert the Filter Panes from vertical to a single **Horizontal Filter Pane** across the top.
+2. **Styling Panel:**
+   - Background: `#1b263b` (Dark Blue Accent).
+   - Label Color: `#FFFFFF` (White).
+   - Selection Color: `#f59e0b` (Orange).
+3. Disable "Show Title" for the filter object.
+
+### **3. OBJECT-LEVEL CSS/STYLING FOR CARDS (THE "BORDER" LOOK)**
+For each of the 6 KPI cards (which are **Containers** or **Text Objects**), apply these specific settings in the **Appearance > Styling** panel:
+
+**A. Common Card Styling:**
+- **Background Color:** `#1e293b`.
+- **Border:** Enable. Color: `#334155`. Width: 1px.
+- **Corner Radius:** 2px (Square look).
+- **Title Styling:** White text, Bold, Font size 14-16px.
+
+**B. Specific Accent Borders (Top & Left):**
+*Note: If Qlik native styling doesn't allow individual side borders, use a thin "Text Object" as a decorative line at the top and left of each card.*
+
+1. **Growth & Revenue:** Accent Color `#f59e0b` (Orange).
+2. **Profitability:** Accent Color `#3b82f6` (Blue).
+3. **Cash & Working Capital:** Accent Color `#10b981` (Green).
+4. **Capital & Treasury:** Accent Color `#0ea5e9` (Sky Blue).
+5. **Enterprise Risk:** Accent Color `#f43f5e` (Rose Red).
+6. **Operational Levers:** Accent Color `#84cc16` (Lime).
+
+### **4. TEXT CONTENT REFINEMENT**
+- **Main Title ("CFO Cockpit"):** Change font color to `#FFFFFF`.
+- **Sub-Titles:** Change font color to `#94a3b8`.
+- **Bullet Points:** Use colored Unicode circles (●) matching the accent color of the card.
+- **KPI Footer Box:** Background `#0f172a`, Border 1px solid matching accent color, Text color matching accent color.
+
+---
+
+### **FINAL OUTPUT REQUEST FOR CLAUDE:**
+"Provide the exact CSS snippets (if using a custom theme) or the specific Qlik 'Styling' property values to apply these colors. Ensure no white backgrounds remain. Every object should blend into the dark navy background."
